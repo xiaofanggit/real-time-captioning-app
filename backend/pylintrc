@@ -1,0 +1,6 @@
+[MASTER]
+ignore=venv,build,dist
+load-plugins=pylint.extensions.docparams
+
+[MESSAGES CONTROL]
+disable=C0114,C0115,C0116  # Disable missing docstring warnings

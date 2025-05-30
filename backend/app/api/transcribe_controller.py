@@ -1,11 +1,13 @@
-from fastapi import APIRouter, File, UploadFile, HTTPException
+from fastapi import APIRouter, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
+
 from app.services.transcribe_service import transcribe_audio_file
 
 router = APIRouter(tags=["Transcription"])
 
+
 @router.post("/transcribe")
-async def transcribe_audio(audio: UploadFile = File(...)):
+async def transcribe_audio(audio: UploadFile = File(...)) -> JSONResponse:
     if not audio.filename:
         raise HTTPException(status_code=400, detail="No file uploaded")
 
