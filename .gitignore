@@ -4,6 +4,7 @@ __pycache__/
 .env/
 .env.local
 .backend.bak/
+.tip.md
 
 # VSCode
 .vscode/
